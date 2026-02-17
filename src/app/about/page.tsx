@@ -27,10 +27,22 @@ export default function AboutPage() {
               carry — shaped through displacement and endurance — and recognize
               the power of maintaining authorship of our own stories as a way to
               remember our past while building a joyful future in our new
-              homeplace. Mahima International creates spaces where women&apos;s
-              voices are centered, their knowledge is valued, and their
-              identities as contributors, leaders, and wisdom-keepers are
-              recognized.
+              homeplace.
+            </p>
+            <p className="text-lg leading-relaxed text-lavender-800">
+              Mahima International creates spaces where women’s voices are
+              centered, their knowledge is valued, and their identities as
+              contributors, leaders, and wisdom-keepers are recognized.
+            </p>
+            <p className="text-lg leading-relaxed text-lavender-800">
+              Our mission is to foster social connections that uphold the
+              dignity and value of refugee experiences, provide a sanctuary for
+              all women to share their respective stories, and create
+              opportunities for developing relationships with the broader
+              community that are grounded in cross-cultural understanding,
+              mutual respect, reciprocity, and solidarity. We use food, art, and
+              story circles as ways to develop meaningful and lasting
+              connections between women of all backgrounds.
             </p>
           </div>
         </div>
@@ -55,17 +67,46 @@ export default function AboutPage() {
                 Our Name &amp; Logo
               </h2>
               <p className="text-lg leading-relaxed text-lavender-800">
-                Mahima is a Sanskrit word that translates roughly as grace or
-                the pursuit of inner peace and wisdom in English. When applied
-                to the refugee experience, mahima represents the strength and
-                resilience we developed in response to displacement to build a
-                life that is whole and joyous and fundamentally grounded in
-                community connections. These experiences are reflected in our
-                logo, the lotus, which symbolizes the beauty and growth that can
-                come from suffering. Just as the lotus blooms out of mud, we, as
-                former refugees, developed strength and resilience in the face
-                of displacement, and we use these to reclaim lives rooted in
-                joy, peace, and cross-cultural connections.
+                Resettlement offers profound relief to families who have spent
+                generations in refugee camps. For many, it opens a long-awaited
+                pathway toward safety and the possibility of an ordinary life.
+                It offers a second chance to rebuild, to reclaim identities
+                disrupted by displacement, and to begin writing new life stories
+                grounded in hope, dreams, and contributions to our new
+                communities. In these ways, resettlement is experienced as a
+                profound act of kindness, and those who receive it carry deep
+                gratitude for the chance to start again.
+              </p>
+              <p className="text-lg leading-relaxed text-lavender-800">
+                At the same time, the realities of resettlement can be
+                overwhelming. Learning new languages, cultural norms, and
+                bureaucratic systems dominate one’s time and energy, and the
+                expectation for former refugees to assimilate devalues the
+                stories, skills, and wisdom we bring to our new communities. In
+                addition, individuals – and especially women – are too often
+                represented exclusively as victims, thus obscuring the
+                tremendous strength, resilience, and fortitude that allowed us
+                to survive and transcend experiences of displacement.
+              </p>
+              <p className="text-lg leading-relaxed text-lavender-800">
+                Our name and logo reflect these complex experiences of
+                displacement and resettlement. Mahima is a Sanskrit word that
+                translates roughly as grace or the pursuit of inner peace and
+                wisdom in English. When applied to the refugee experience,
+                mahima represents the strength and resilience we developed in
+                response to displacement to build a life that is whole and
+                joyous and fundamentally grounded in community connections.
+                These experiences are reflected in our logo, the lotus, which
+                symbolizes the beauty and growth that can come from suffering.
+                Just as the lotus blooms out of mud, we, as former refugees,
+                developed strength and resilience in the face of displacement,
+                and we use these to reclaim lives rooted in joy, peace, and
+                cross-cultural connections. Mahima International provides a
+                space where women with refugee experience are no longer defined
+                by displacement, but are celebrated for the knowledge, wisdom,
+                and strength we bring to our communities. We seek to create a
+                world in which we can thrive as leaders, healers, and joyful
+                authors of our own stories, past and present.
               </p>
             </div>
           </div>

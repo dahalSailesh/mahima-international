@@ -82,7 +82,7 @@ export default function HomePage() {
             <p className="text-lg md:text-xl text-lavender-700 mb-10 max-w-2xl leading-relaxed">
               Mahima International is a women-led organization creating spaces
               where refugee women connect, share, and thrive through food, art,
-              and story circles.
+              and stories.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/about" className="btn-primary">
