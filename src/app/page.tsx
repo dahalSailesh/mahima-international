@@ -88,9 +88,7 @@ export default function HomePage() {
               <Link href="/about" className="btn-primary">
                 Learn More
               </Link>
-              <Link href="/donate" className="btn-secondary">
-                Donate
-              </Link>
+              <DonateButton variant="inline" />
             </div>
           </div>
         </div>

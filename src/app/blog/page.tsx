@@ -1,5 +1,4 @@
-import SectionHeading from "@/components/SectionHeading";
-import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "Stories & Updates | Mahima International",
@@ -49,15 +48,10 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="Stories & Updates"
-            subtitle="Voices, reflections, and news from our community"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Stories & Updates"
+        subtitle="Voices, reflections, and news from our community"
+      />
 
       {/* Blog Grid */}
       <section className="bg-white section-padding py-16 md:py-24">
@@ -91,12 +85,9 @@ export default function BlogPage() {
                   <p className="text-lavender-700 leading-relaxed mb-4">
                     {post.excerpt}
                   </p>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="text-plum-600 font-medium hover:text-plum-700 transition-colors text-sm"
-                  >
-                    Read More &rarr;
-                  </Link>
+                  <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wide text-lavender-500 bg-lavender-50 px-3 py-1.5 rounded-full">
+                    Full Story Coming Soon
+                  </span>
                 </div>
               </article>
             ))}

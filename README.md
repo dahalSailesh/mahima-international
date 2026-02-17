@@ -10,7 +10,8 @@ Website for **Mahima International**, a women-led non-profit organization founde
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 16 (App Router)
+- **UI Library**: React 19
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Hosting**: Vercel
@@ -34,8 +35,9 @@ Website for **Mahima International**, a women-led non-profit organization founde
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 24 (recommended via `.nvmrc`) or Node.js 20.19+
 - npm
+- If you use `nvm`, run `nvm use` (project includes `.nvmrc`)
 
 ### Installation
 
@@ -58,6 +60,12 @@ npm run build
 npm start
 ```
 
+### Lint
+
+```bash
+npm run lint
+```
+
 ## Deployment
 
 The site is deployed on Vercel. Any push to the `main` branch will trigger a new deployment.
@@ -72,3 +80,10 @@ The site is deployed on Vercel. Any push to the `main` branch will trigger a new
 - [ ] Connect contact and volunteer forms to a backend/email service
 - [ ] Add social media links (Instagram, Facebook)
 - [ ] Newsletter signup integration
+
+## Current Development Behavior
+
+- Blog entries are currently preview cards only. Individual post pages are not yet published.
+- Contact and volunteer forms open a prefilled email draft (until backend form handling is connected).
+- Donation amount selection is live in UI, but Stripe checkout is intentionally marked "coming soon".
+- Footer newsletter signup is a waiting-list placeholder until provider integration is complete.

@@ -1,5 +1,5 @@
-import SectionHeading from "@/components/SectionHeading";
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "Programs | Mahima International",
@@ -34,15 +34,10 @@ const programs = [
 export default function ProgramsPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="Our Programs"
-            subtitle="Connecting communities through food, art, and storytelling"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Our Programs"
+        subtitle="Connecting communities through food, art, and storytelling"
+      />
 
       {/* Programs */}
       <section className="bg-white section-padding py-16 md:py-24">

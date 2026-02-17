@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 interface DonateButtonProps {
@@ -16,13 +14,13 @@ export default function DonateButton({
   const baseStyles =
     "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-lavender-500 focus:ring-offset-2";
 
-  const variantStyles: Record<string, string> = {
+  const variantStyles: Record<NonNullable<DonateButtonProps["variant"]>, string> = {
     default:
       "bg-lavender-600 text-white px-6 py-3 text-base hover:bg-lavender-700 hover:shadow-md",
     large:
       "bg-lavender-600 text-white px-8 py-4 text-lg hover:bg-lavender-700 hover:shadow-lg",
     inline:
-      "bg-lavender-600 text-white px-5 py-2.5 text-sm hover:bg-lavender-700 hover:shadow-md",
+      "bg-lavender-600 text-white px-6 py-3 text-base hover:bg-lavender-700 hover:shadow-md",
   };
 
   return (

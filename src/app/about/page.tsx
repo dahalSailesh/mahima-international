@@ -1,6 +1,6 @@
 import Image from "next/image";
-import SectionHeading from "@/components/SectionHeading";
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "About Us | Mahima International",
@@ -11,15 +11,10 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="About Mahima International"
-            subtitle="A women-led organization founded by and for women with refugee experience"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="About Mahima International"
+        subtitle="A women-led organization founded by and for women with refugee experience"
+      />
 
       {/* Value Section */}
       <section className="bg-white section-padding py-16 md:py-24">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import SectionHeading from "@/components/SectionHeading";
+import PageHeader from "@/components/PageHeader";
 
 const interestAreas = [
   { id: "event-support", label: "Event Support" },
@@ -55,22 +55,27 @@ export default function VolunteerPage() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // Placeholder: integrate with backend or email service
-    console.log("Volunteer form submitted:", formData);
+    const subject = encodeURIComponent("[Website] Volunteer Application");
+    const body = encodeURIComponent(
+      [
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `Phone: ${formData.phone || "N/A"}`,
+        `Interests: ${formData.interests.join(", ") || "N/A"}`,
+        "",
+        formData.message || "(No additional message)",
+      ].join("\n")
+    );
+    window.location.href = `mailto:info@mahimainternational.org?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="Volunteer With Us"
-            subtitle="Share your time and talents to support refugee women in our community"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Volunteer With Us"
+        subtitle="Share your time and talents to support refugee women in our community"
+      />
 
       {/* Volunteer Description */}
       <section className="bg-white section-padding py-16 md:py-24">
@@ -107,6 +112,12 @@ export default function VolunteerPage() {
             <h2 className="text-3xl mb-8 text-lavender-900 text-center">
               Sign Up to Volunteer
             </h2>
+            <div className="mb-6 rounded-xl border border-lavender-200 bg-white p-4">
+              <p className="text-sm text-lavender-800">
+                Direct form processing is still in development. Submitting this
+                form will open a prefilled email draft.
+              </p>
+            </div>
 
             {submitted ? (
               <div className="bg-white rounded-2xl p-8 text-center">
@@ -129,8 +140,8 @@ export default function VolunteerPage() {
                   Thank You for Your Interest!
                 </h3>
                 <p className="text-lavender-700">
-                  We have received your volunteer application. A member of our
-                  team will reach out to you soon with next steps.
+                  Your volunteer draft is ready in your email app. Send it and a
+                  team member will follow up with next steps.
                 </p>
               </div>
             ) : (
@@ -264,7 +275,7 @@ export default function VolunteerPage() {
                 </div>
 
                 <button type="submit" className="btn-primary w-full">
-                  Submit Application
+                  Open Volunteer Draft
                 </button>
               </form>
             )}

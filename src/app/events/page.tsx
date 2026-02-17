@@ -1,5 +1,5 @@
-import SectionHeading from "@/components/SectionHeading";
 import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "Events | Mahima International",
@@ -68,15 +68,10 @@ const pastEvents = [
 export default function EventsPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="Upcoming Events"
-            subtitle="Gather, share, and connect with our community"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Upcoming Events"
+        subtitle="Gather, share, and connect with our community"
+      />
 
       {/* Upcoming Events */}
       <section className="bg-white section-padding py-16 md:py-24">

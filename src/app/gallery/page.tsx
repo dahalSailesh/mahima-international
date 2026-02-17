@@ -1,4 +1,5 @@
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "Gallery | Mahima International",
@@ -7,30 +8,18 @@ export const metadata = {
 };
 
 const galleryItems = [
-  { title: "Story Circle Gathering", aspect: "aspect-square", span: "" },
-  {
-    title: "Culinary Exchange",
-    aspect: "aspect-[4/5]",
-    span: "md:row-span-2",
-  },
-  { title: "Community Celebration", aspect: "aspect-square", span: "" },
-  { title: "Textile Art Workshop", aspect: "aspect-[4/3]", span: "" },
-  {
-    title: "Shared Meal Preparation",
-    aspect: "aspect-square",
-    span: "",
-  },
-  {
-    title: "Women in Conversation",
-    aspect: "aspect-[3/4]",
-    span: "md:row-span-2",
-  },
-  { title: "Painting Session", aspect: "aspect-square", span: "" },
-  { title: "Spring Gathering", aspect: "aspect-[4/3]", span: "" },
-  { title: "Traditional Dance", aspect: "aspect-square", span: "" },
-  { title: "Garden Project", aspect: "aspect-[4/3]", span: "" },
-  { title: "Storytelling Evening", aspect: "aspect-square", span: "" },
-  { title: "Annual Celebration", aspect: "aspect-[4/3]", span: "" },
+  { title: "Story Circle Gathering", aspect: "aspect-square" },
+  { title: "Culinary Exchange", aspect: "aspect-[4/5]" },
+  { title: "Community Celebration", aspect: "aspect-square" },
+  { title: "Textile Art Workshop", aspect: "aspect-[4/3]" },
+  { title: "Shared Meal Preparation", aspect: "aspect-square" },
+  { title: "Women in Conversation", aspect: "aspect-[3/4]" },
+  { title: "Painting Session", aspect: "aspect-square" },
+  { title: "Spring Gathering", aspect: "aspect-[4/3]" },
+  { title: "Traditional Dance", aspect: "aspect-square" },
+  { title: "Garden Project", aspect: "aspect-[4/3]" },
+  { title: "Storytelling Evening", aspect: "aspect-square" },
+  { title: "Annual Celebration", aspect: "aspect-[4/3]" },
 ];
 
 const bgColors = [
@@ -45,41 +34,22 @@ const bgColors = [
 export default function GalleryPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="Gallery"
-            subtitle="Moments of connection, creativity, and community"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Gallery"
+        subtitle="Moments of connection, creativity, and community"
+      />
 
       {/* Gallery Grid */}
       <section className="bg-white section-padding py-16 md:py-24">
         <div className="container-narrow">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {galleryItems.map((item, index) => {
-              const heights = [
-                "h-64",
-                "h-80",
-                "h-72",
-                "h-56",
-                "h-64",
-                "h-96",
-                "h-72",
-                "h-64",
-                "h-80",
-                "h-56",
-                "h-72",
-                "h-64",
-              ];
               return (
                 <div
                   key={item.title}
                   className={`${
                     bgColors[index % bgColors.length]
-                  } ${heights[index]} rounded-2xl flex items-center justify-center break-inside-avoid hover:shadow-md transition-shadow duration-300 cursor-pointer group`}
+                  } ${item.aspect} rounded-2xl flex items-center justify-center hover:shadow-md transition-shadow duration-300 group`}
                 >
                   <div className="text-center px-4">
                     <svg
@@ -111,12 +81,12 @@ export default function GalleryPage() {
         <div className="container-narrow text-center">
           <p className="text-lavender-700 text-lg">
             Want to share photos from our events?{" "}
-            <a
+            <Link
               href="/contact"
               className="text-plum-600 font-medium hover:text-plum-700 transition-colors"
             >
               Contact us
-            </a>{" "}
+            </Link>{" "}
             to contribute to our gallery.
           </p>
         </div>

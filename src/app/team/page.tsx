@@ -1,4 +1,5 @@
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata = {
   title: "Our Team | Mahima International",
@@ -42,15 +43,10 @@ const teamMembers = [
 export default function TeamPage() {
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="Our Team"
-            subtitle="Dedicated women building bridges across cultures and communities"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Our Team"
+        subtitle="Dedicated women building bridges across cultures and communities"
+      />
 
       {/* Team Grid */}
       <section className="bg-white section-padding py-16 md:py-24">
@@ -93,9 +89,9 @@ export default function TeamPage() {
             vision. Whether as a volunteer, board member, or staff, your
             contributions make a difference.
           </p>
-          <a href="/contact" className="btn-primary">
+          <Link href="/contact" className="btn-primary">
             Get in Touch
-          </a>
+          </Link>
         </div>
       </section>
     </>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import SectionHeading from "@/components/SectionHeading";
+import PageHeader from "@/components/PageHeader";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -14,22 +14,17 @@ export default function ContactPage() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // Placeholder: integrate with email service or API
-    console.log("Contact form submitted:", formData);
+    const subject = encodeURIComponent(`[Website] ${formData.subject}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+    window.location.href = `mailto:info@mahimainternational.org?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="Contact Us"
-            subtitle="We would love to hear from you"
-          />
-        </div>
-      </section>
+      <PageHeader title="Contact Us" subtitle="We would love to hear from you" />
 
       {/* Contact Content */}
       <section className="bg-white section-padding py-16 md:py-24">
@@ -37,6 +32,12 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-3 gap-12">
             {/* Contact Form */}
             <div className="md:col-span-2">
+              <div className="mb-6 rounded-xl border border-lavender-200 bg-lavender-50 p-4">
+                <p className="text-sm text-lavender-800">
+                  Form delivery is currently in development. Submitting this form
+                  will open your email app with a prefilled draft.
+                </p>
+              </div>
               {submitted ? (
                 <div className="bg-lavender-50 rounded-2xl p-8 text-center">
                   <div className="w-16 h-16 bg-lavender-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -58,8 +59,8 @@ export default function ContactPage() {
                     Thank You
                   </h3>
                   <p className="text-lavender-700">
-                    Your message has been sent. We will get back to you as soon
-                    as possible.
+                    Your email draft has been prepared. Send it from your email
+                    app and our team will follow up.
                   </p>
                 </div>
               ) : (
@@ -145,7 +146,7 @@ export default function ContactPage() {
                   </div>
 
                   <button type="submit" className="btn-primary">
-                    Send Message
+                    Open Email Draft
                   </button>
                 </form>
               )}

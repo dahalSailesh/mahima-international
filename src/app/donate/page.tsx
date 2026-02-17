@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import SectionHeading from "@/components/SectionHeading";
+import Link from "next/link";
+import PageHeader from "@/components/PageHeader";
 
 const presetAmounts = [25, 50, 100, 250];
 
@@ -28,24 +29,24 @@ export default function DonatePage() {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(100);
   const [customAmount, setCustomAmount] = useState("");
   const [isCustom, setIsCustom] = useState(false);
+  const [checkoutNotice, setCheckoutNotice] = useState<string | null>(null);
 
   const handlePresetClick = (amount: number) => {
     setSelectedAmount(amount);
     setIsCustom(false);
     setCustomAmount("");
+    setCheckoutNotice(null);
   };
 
   const handleCustomClick = () => {
     setIsCustom(true);
     setSelectedAmount(null);
+    setCheckoutNotice(null);
   };
 
   const handleCheckout = () => {
-    const amount = isCustom ? parseFloat(customAmount) : selectedAmount;
-    // Placeholder: integrate with Stripe checkout
-    console.log("Proceeding to checkout with amount:", amount);
-    alert(
-      `Stripe checkout integration coming soon. Selected amount: $${amount}`
+    setCheckoutNotice(
+      "Stripe checkout is currently in development. Please use Contact Us if you want to make an immediate contribution."
     );
   };
 
@@ -53,15 +54,10 @@ export default function DonatePage() {
 
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-lavender-50 to-cream section-padding py-20 md:py-28">
-        <div className="container-narrow">
-          <SectionHeading
-            title="Support Our Mission"
-            subtitle="Your generosity creates spaces of connection and healing"
-          />
-        </div>
-      </section>
+      <PageHeader
+        title="Support Our Mission"
+        subtitle="Your generosity creates spaces of connection and healing"
+      />
 
       {/* Donation Section */}
       <section className="bg-white section-padding py-16 md:py-24">
@@ -135,14 +131,14 @@ export default function DonatePage() {
                 className="w-full py-4 bg-plum-600 text-white rounded-xl font-semibold text-lg hover:bg-plum-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md"
               >
                 {currentAmount > 0
-                  ? `Donate $${currentAmount}`
+                  ? `Continue with $${currentAmount} (Coming Soon)`
                   : "Select an Amount"}
               </button>
 
               {/* Payment Methods */}
               <div className="mt-6 text-center">
                 <p className="text-sm text-lavender-500 mb-3">
-                  Secure payment powered by Stripe
+                  Secure checkout integration is in progress
                 </p>
                 <div className="flex items-center justify-center gap-4 text-lavender-400">
                   <span className="text-xs font-medium bg-lavender-50 px-3 py-1.5 rounded-lg">
@@ -156,6 +152,17 @@ export default function DonatePage() {
                   </span>
                 </div>
               </div>
+              {checkoutNotice && (
+                <div className="mt-6 rounded-xl border border-lavender-200 bg-lavender-50 p-4 text-sm text-lavender-800">
+                  <p>{checkoutNotice}</p>
+                  <Link
+                    href="/contact"
+                    className="inline-block mt-2 text-plum-700 font-medium hover:text-plum-800"
+                  >
+                    Contact Us for Immediate Support
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>
